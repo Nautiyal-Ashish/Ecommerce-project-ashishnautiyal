@@ -18,7 +18,7 @@ const authRoutes = require('./routes/auth');
 const cartRoutes = require('./routes/cart');
 
 // mongoose connection 
-mongoose.connect('mongodb+srv://nauty9625ashish:nautyashish@123@cluster0.3qrrdcu.mongodb.net/ecombackendretryWrites=true&w=majority&appName=Cluster0')
+mongoose.connect('mongodb+srv://nauty9625ashish:<nautyashish@123>@cluster0.3qrrdcu.mongodb.net/ecombackendretryWrites=true&w=majority&appName=Cluster0')
     .then(() => { console.log('DB connected successfully') })
     .catch((err) => {
         console.log("DB Error");
