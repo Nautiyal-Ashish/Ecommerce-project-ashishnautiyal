@@ -1,0 +1,44 @@
+<% layout('layouts/boilerplate') %> <%- include('../partials/flash') %>
+
+<div class="row justify-content-center">
+  <div class="col-md-6 col-lg-4 mx-auto mt-5">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h1 class="display-6 mb-4 text-center">Login</h1>
+        <form action="/login" method="POST">
+          <div class="mb-3">
+            <label class="form-label" for="username">Username:</label>
+            <input
+              class="form-control"
+              type="text"
+              name="username"
+              id="username"
+              placeholder="Username"
+              required
+            />
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label" for="password">Password:</label>
+            <input
+              class="form-control"
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Password"
+              required
+            />
+          </div>
+
+          <div class="d-grid">
+            <button type="submit" class="btn btn-success btn-lg">Login</button>
+          </div>
+          <p class="text-center mt-3">
+            Don't have an account?
+            <a href="/register" class="text-decoration-none">Sign Up</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

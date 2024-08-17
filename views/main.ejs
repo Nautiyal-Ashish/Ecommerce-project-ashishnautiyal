@@ -1,0 +1,66 @@
+<% layout('layouts/boilerplate') %> <%- include('./partials/navbar') %>
+
+<style>
+  .hero-section {
+    background: url("https://plus.unsplash.com/premium_photo-1683121269108-1bd195cd18cf?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
+      no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    align-items: center; /* Center content vertically */
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for text readability */
+    z-index: 1;
+  }
+
+  .hero-section .container {
+    position: relative;
+    text-align: center;
+    max-width: 700px; /* Restrict container width */
+    z-index: 2;
+  }
+
+  .hero-section h1 {
+    margin-bottom: 20px;
+    font-size: 3.5rem; /* Adjust font size */
+    font-weight: 700; /* Make heading bold */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add text shadow for better readability */
+  }
+
+  .hero-section p {
+    margin-bottom: 30px; /* Increase space below paragraph */
+    font-size: 1.25rem; /* Adjust font size */
+    font-weight: 300; /* Light weight for the paragraph */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Add text shadow */
+  }
+
+  .hero-section .btn {
+    padding: 12px 30px; /* Adjust button padding */
+    font-size: 1.25rem; /* Increase font size */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for background and transform */
+  }
+
+  .hero-section .btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly scale up button */
+  }
+</style>
+
+<div class="hero-section">
+  <div class="container">
+    <h1 class="display-4">Welcome to Our Website</h1>
+    <p class="lead">We offer the best services to help you succeed.</p>
+    <a href="products" class="btn btn-primary btn-lg">See Products</a>
+  </div>
+</div>

@@ -1,0 +1,102 @@
+<% layout('layouts/boilerplate') %> <%- include('../partials/navbar') %>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <h1 class="display-6 mb-4 text-center">Edit Product</h1>
+          <form
+            action="/products/<%=foundProduct._id%>?_method=PATCH"
+            method="POST"
+            class="needs-validation"
+            novalidate
+          >
+            <div class="mb-3">
+              <label for="naam" class="form-label">Name:</label>
+              <input
+                type="text"
+                class="form-control"
+                name="name"
+                id="naam"
+                placeholder="Name of the Product"
+                value="<%=foundProduct.name%>"
+                required
+              />
+              <div class="valid-feedback">Looks good!</div>
+              <div class="invalid-feedback">Please enter the name.</div>
+            </div>
+            <div class="mb-3">
+              <label for="img" class="form-label">Image:</label>
+              <input
+                type="text"
+                class="form-control"
+                name="img"
+                id="img"
+                placeholder="Image URL of the Product"
+                value="<%=foundProduct.img%>"
+                required
+              />
+              <div class="valid-feedback">Looks good!</div>
+              <div class="invalid-feedback">Please enter the image path.</div>
+            </div>
+            <div class="mb-3">
+              <label for="paisa" class="form-label">Price:</label>
+              <input
+                type="number"
+                class="form-control"
+                name="price"
+                id="paisa"
+                placeholder="Enter the Price of the Product"
+                value="<%=foundProduct.price%>"
+                required
+              />
+              <div class="valid-feedback">Looks good!</div>
+              <div class="invalid-feedback">Please enter the price.</div>
+            </div>
+            <div class="mb-3">
+              <label for="desc" class="form-label">Description:</label>
+              <textarea
+                name="desc"
+                id="desc"
+                class="form-control"
+                rows="5"
+                placeholder="Add Description of the Product"
+                required
+              >
+<%= foundProduct.desc %></textarea
+              >
+              <div class="valid-feedback">Looks good!</div>
+              <div class="invalid-feedback">Please enter the description.</div>
+            </div>
+            <div class="d-grid">
+              <button type="submit" class="btn btn-success btn-lg">
+                Edit Product
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function () {
+    "use strict";
+    const forms = document.querySelectorAll(".needs-validation");
+    Array.from(forms).forEach((form) => {
+      form.addEventListener(
+        "submit",
+        (event) => {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add("was-validated");
+        },
+        false
+      );
+    });
+  })();
+</script>

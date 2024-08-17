@@ -1,0 +1,104 @@
+<% layout('layouts/boilerplate') %> <%- include('../partials/navbar') %>
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <form
+        action="/products"
+        method="post"
+        novalidate
+        class="needs-validation"
+      >
+        <h2 class="text-center mb-4">Add New Product</h2>
+
+        <div class="mb-3">
+          <label for="naam" class="form-label">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="name"
+            id="naam"
+            placeholder="Name of the Product"
+            required
+          />
+          <div class="invalid-feedback">
+            Please enter the name of the product.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="img" class="form-label">Image URL</label>
+          <input
+            type="text"
+            class="form-control"
+            name="img"
+            id="img"
+            placeholder="Image URL of the Product"
+            required
+          />
+          <div class="invalid-feedback">Please provide an image URL.</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="paisa" class="form-label">Price</label>
+          <input
+            type="number"
+            class="form-control"
+            name="price"
+            id="paisa"
+            placeholder="Enter the Price of the Product"
+            required
+          />
+          <div class="invalid-feedback">
+            Please enter the price of the product.
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="desc" class="form-label">Description</label>
+          <textarea
+            name="desc"
+            id="desc"
+            rows="5"
+            class="form-control"
+            placeholder="Add Description of the Product"
+            required
+          ></textarea>
+          <div class="invalid-feedback">
+            Please enter a description of the product.
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-success btn-lg w-100">
+          Add Product
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Immediately Invoked Function Expression (IIFE) for form validation
+  (() => {
+    "use strict";
+
+    // Fetch all forms we want to apply custom Bootstrap validation styles to
+    const forms = document.querySelectorAll(".needs-validation");
+
+    // Loop over them and prevent submission
+    Array.from(forms).forEach((form) => {
+      form.addEventListener(
+        "submit",
+        (event) => {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+
+          form.classList.add("was-validated");
+        },
+        false
+      );
+    });
+  })();
+</script>
