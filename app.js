@@ -18,7 +18,7 @@ const authRoutes = require('./routes/auth');
 const cartRoutes = require('./routes/cart');
 
 // mongoose connection 
-mongoose.connect('mongodb+srv://nauty9625ashish:<nautyashish@123>@cluster0.3qrrdcu.mongodb.net/ecombackendretryWrites=true&ssl=false&w=majority&appName=Cluster0')
+mongoose.connect('mongodb+srv://nauty9625ashish:iGou2lGPR080U1Un@cluster0.eleyt.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
     .then(() => { console.log('DB connected successfully') })
     .catch((err) => {
         console.log("DB Error");
@@ -78,6 +78,6 @@ app.get('*', (req, res) => {
 
 
 // Server Connection 
-app.listen(8080, () => {
+app.listen(4444, () => {
     console.log("Server Connected at port 8080");
 })
