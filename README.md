@@ -6,7 +6,7 @@ This is a full-stack E-commerce application built using **Node.js**, **Express.j
 
 ## Live Demo
 
-Check out the live version of the application [here]([https://your-live-app-link.com](https://ecommerce-project-ashishnautiyal.onrender.com)).
+Check out the live version of the application [Live Link ]([https://your-live-app-link.com](https://ecommerce-project-ashishnautiyal.onrender.com)).
 
 ## Table of Contents
 
